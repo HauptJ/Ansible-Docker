@@ -38,9 +38,12 @@ RUN pip install \
 	
 # Setup SSH keys config
 
-COPY SSH ~/.ssh
-RUN chmod 700 /home/root/.ssh
-RUN chmod 644 /home/root/.ssh/authorized_keys
+COPY SSH /root/.ssh
+
+# Set permissions for SSH key directory
+RUN mkdir -p /root/.ssh
+RUN chmod 700 /root/.ssh
+RUN chmod 400 /root/.ssh/*
 
 # Setup Ansible host inventory
 
