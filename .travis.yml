@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t ansible:latest .
+  - docker run -i -t --name ansible -h ansible ansible:latest /bin/bash
+
+script:
+  - docker ps | grep -q ansible
