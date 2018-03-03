@@ -1,0 +1,4 @@
+# group variables can go in this directory
+#
+# ntp_server=ntp.atlanta.example.com
+# proxy=proxy.atlanta.example.com

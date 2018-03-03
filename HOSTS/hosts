@@ -1,0 +1,12 @@
+# Add your Ansible inventory in this file.
+# See: https://docs.ansible.com/ansible/latest/intro_inventory.html
+# 
+# Example:
+# [example]
+# foo.example.com
+# bar.example.com
+
+# [dbservers]
+# one.example.com
+# two.example.com
+# three.example.com
