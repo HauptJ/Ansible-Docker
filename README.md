@@ -27,6 +27,7 @@ pywinrm
 To pre load SSH keys, and inventory files:
 ------------------------------------------
 You can load your SSH private keys files by placing them in the `SSH` directory.
+**NOTE:** Vagrant's insecure_private_key is included for provisioning vagrant boxes.
 You can load your Ansible `hosts` inventory file by placing it in the `HOSTS` directory.
 You can load your `group_vars` inventory files by placing them in the `GROUP_VARS` directory.
 You can load your `host_vars` inventory files by placing them in the `HOST_VARS` directory.
