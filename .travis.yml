@@ -2,8 +2,15 @@ services:
   - docker
 
 install:
+  # Build container
   - docker build -t ansible:latest .
-  - docker run -d --name ansible -h ansible ansible:latest /bin/bash
+  # Test container
+  - docker run -d --name bash -h ansible ansible:latest /bin/bash
 
 script:
+  # Check to see if container is running
   - docker ps | grep -q ansible
+  # Stop container
+  - docker stop $(docker ps -a -q)
+  # Delete container
+  - docker rm $(docker ps -a -q)
