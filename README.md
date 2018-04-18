@@ -65,4 +65,4 @@ You can download a pre-built version of this container from the public Docker re
 
 `docker pull hauptj/ansible-fedora-27`
 
-**TODO:** Resolve issue in causing openssl to decrypt secrets during build or find another tool to protect secrets.
+**TODO:** Resolve issue in causing openssl crash while decrypting secrets during build or find another tool to protect secrets.
