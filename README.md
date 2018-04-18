@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/HauptJ/Ansible-Docker.svg?branch=master)](https://travis-ci.org/HauptJ/Ansible-Docker)
 
-Ansible in Docker, fully compatible with Docker for Windows
+Ansible, Terraform and OpenStack CLI in Docker
+Fully compatible with Docker for Windows
 
 Before we begin please note *the `<>` just indicate values you need to replace with your own. Do not use `<` or `>` in your commands.*
 
@@ -31,6 +32,8 @@ You can load your SSH private keys files by placing them in the `SSH` directory.
 You can load your Ansible `hosts` inventory file by placing it in the `HOSTS` directory.
 You can load your `group_vars` inventory files by placing them in the `GROUP_VARS` directory.
 You can load your `host_vars` inventory files by placing them in the `HOST_VARS` directory.
+You can load your OpenStack account `clouds.yaml` and OpenStack account secrets file `secure.yaml` by placing them in the `OPENSTACK` directory.
+Information about configuring the OpenStack CLI
 
 
 
@@ -41,7 +44,7 @@ To build the container:
 docker build -t <image tag>:<image version number> .
 ```
 
-The image tag and version number can be anything you want. For example, if you want to use: 
+The image tag and version number can be anything you want. For example, if you want to use:
 `ansible:latest`, your build command would be: `docker build -t ansible:latest . `
 
 
