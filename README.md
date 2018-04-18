@@ -25,7 +25,7 @@ sshpass
 ansible
 pywinrm
 
-To pre load SSH keys, and inventory files:
+To pre load SSH keys, inventory files, and OpenStack:
 ------------------------------------------
 You can load your SSH private keys files by placing them in the `SSH` directory.
 **NOTE:** Vagrant's insecure_private_key is included for provisioning vagrant boxes.
@@ -33,7 +33,7 @@ You can load your Ansible `hosts` inventory file by placing it in the `HOSTS` di
 You can load your `group_vars` inventory files by placing them in the `GROUP_VARS` directory.
 You can load your `host_vars` inventory files by placing them in the `HOST_VARS` directory.
 You can load your OpenStack account `clouds.yaml` and OpenStack account secrets file `secure.yaml` by placing them in the `OPENSTACK` directory.
-Information about configuring the OpenStack CLI
+[Instructions to configure the OpenStack CLI](http://docs.platform9.com/support/managing-multiple-clouds-openstack-cli/)
 
 
 
@@ -64,3 +64,5 @@ Pre-built container:
 You can download a pre-built version of this container from the public Docker repository by running:
 
 `docker pull hauptj/ansible-fedora-27`
+
+**TODO:** Resolve issue in causing openssl to decrypt secrets during build or find another tool to protect secrets.

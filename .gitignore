@@ -1,2 +1,3 @@
 # Password file
-.password.txt
+# NOTE: commented out for CI testing.
+#.password.txt
