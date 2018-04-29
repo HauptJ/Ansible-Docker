@@ -42,7 +42,7 @@ You can load your OpenStack account `clouds.yaml` and OpenStack account secrets 
 sudo apt update && sudo apt -y upgrade && sudo apt -y install software-properties-common && sudo apt -y update && sudo apt -y install ansible && ansible --version
 ```
 
-- In the Dockerfile, the password file `.password.txt`
+- In the `Dockerfile`, the password file is: `.password.txt`
 
 - To encrypt a file
 ```
