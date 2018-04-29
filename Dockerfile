@@ -54,11 +54,15 @@ RUN cd /tmp && \
 	wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 	unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
 
-# Copy password file used to decrypt secrets
+# Copy password file used to decrypt secrets using Ansible Vault
 COPY .password.txt /root/.password.txt
+RUN chmod -x /root/.password.txt
 
 # Setup SSH keys and config
 COPY SSH /root/.ssh
+# Decrypt SSH secrets
+RUN ansible-vault decrypt /root/.ssh/authorized_keys --vault-password-file ~/.password.txt
+RUN ansible-vault decrypt /root/.ssh/insecure_private_key --vault-password-file ~/.password.txt
 
 # Set permissions for SSH key directory
 RUN mkdir -p /root/.ssh
@@ -68,12 +72,21 @@ RUN chmod 400 /root/.ssh/*
 # Setup OpenStack CLI
 
 COPY OPENSTACK /root/.config/openstack/
+# Decrypt OpenStack secrets
+RUN ansible-vault decrypt /root/.config/openstack/clouds.yaml --vault-password-file ~/.password.txt
+RUN ansible-vault decrypt /root/.config/openstack/secure.yaml --vault-password-file ~/.password.txt
 
 # Setup Ansible host inventory
 COPY HOSTS /etc/ansible
+# Decrypt Ansible secrets
+RUN ansible-vault decrypt /etc/ansible/hosts --vault-password-file ~/.password.txt
 
 # Setup Ansible global group_vars
 COPY GROUP_VARS /etc/ansible/group_vars/
+# Decrypt Ansible secrets
+RUN ansible-vault decrypt /etc/ansible/group_vars/example --vault-password-file ~/.password.txt
 
 # Setup Ansible host_vars
 COPY HOST_VARS /etc/ansible/host_vars/
+# Decrypt Ansible secrets
+RUN ansible-vault decrypt /etc/ansible/host_vars/example --vault-password-file ~/.password.txt

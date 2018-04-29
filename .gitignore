@@ -1,3 +1,4 @@
-# Password file
-# NOTE: commented out for CI testing.
+# Example Password file
+# NOTE: commented out for reference CI testing.
+# I would STRONGLY recommend storing the password file outside of the repository
 #.password.txt
