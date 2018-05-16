@@ -1,10 +1,10 @@
 ############################################################
 # Dockerfile for Ansible and Terraform
-# Based on Fedora 27
+# Based on Fedora 28
 ############################################################
 
-# Set the base image to Fedora 27
-FROM fedora:27
+# Set the base image to Fedora 28
+FROM fedora:28
 
 # File Author / Maintainer
 MAINTAINER josh@hauptj.com
