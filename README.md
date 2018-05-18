@@ -39,7 +39,7 @@ You can load your OpenStack account `clouds.yaml` and OpenStack account secrets 
 
 - Ansible Vault is included with Ansible. To install the latest version of Ansible on Ubuntu 16.04 / Linux Subsystem for Windows:
 ```
-sudo apt update && sudo apt -y upgrade && sudo apt -y install software-properties-common && sudo apt -y update && sudo apt -y install ansible && ansible --version
+sudo apt update && sudo apt -y upgrade && sudo apt -y install software-properties-common && sudo apt-add-repository ppa:ansible/ansible && sudo apt -y update && sudo apt -y install ansible && ansible --version
 ```
 
 - In the `Dockerfile`, the password file is: `.password.txt`
@@ -86,4 +86,4 @@ Pre-built container:
 
 You can download a pre-built version of this container from the public Docker repository by running:
 
-`docker pull hauptj/ansible-fedora-27`
+`docker pull hauptj/ansible-terraform`
